@@ -1,0 +1,141 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
+ 
+* {
+    box-sizing: border-box;
+}
+ 
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+ 
+body {
+    text-shadow: 0 0 1px #000, 0 0 2px #000;
+    background: {background_color};
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: {font_size};
+    line-height: 1.5em;
+    color: {text_color};
+	  width:100%;
+}
+ 
+#log>div {
+    animation: fadeInBottom 0.4s ease forwards, fadeOut 2s ease {message_hide_delay} forwards;
+    -webkit-animation: fadeInBottom 0.4s ease forwards, fadeOut 2s ease {message_hide_delay} forwards;
+}
+@keyframes fadeInBottom {
+   0% {
+      opacity: 0;
+      transform: translateY(55px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+ 
+#log {
+    display: table;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 10px 10px;
+    table-layout: fixed;
+  	width: 100%;
+}
+ 
+#log > div {
+  	display: block;
+  	border-radius: 20px;
+  	padding: 3px;
+  	padding-left: 15px;
+  	padding-right: 15px;
+  	margin-top: 5px;
+  	width:100%;
+  	margin-top:20px;
+}
+ 
+#log > div.deleted {
+    visibility: hidden;
+}
+ 
+#log .emote {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0.4em 0.2em;
+    position: relative;
+}
+ 
+#log .emote img {
+    display: inline-block;
+    height: 1em;
+    opacity: 0;
+}
+ 
+#log .message,#log .meta {
+    vertical-align: top;
+    display: table-cell;
+    padding-bottom: 0.1em;
+}
+#log .message{
+  display:block;
+  padding-left: 0.5em;
+  background-color: white;
+  color:black;
+  border:2px solid black;
+  width:100%;
+  border-radius:0px;
+  padding:10px;
+  padding-left:15px;
+  margin-top:5px;
+}
+/*
+*/
+/*
+#log .meta {
+    text-align: center;
+    padding:20px;
+    padding-right: 0.5em;
+    overflow: hidden;
+	  color:var(--color);
+	  background-color: #ce949b
+	  outline-offset: -5px;	
+  	margin-bottom:10px;
+};*/
+ 
+#log .message {
+    word-wrap: break-word;
+}
+ 
+.badge {
+    display: inline-block;
+    margin-right: 0.2em;
+    position: relative;
+    height: 1em;
+    vertical-align: middle;
+    top: -0.1em;
+  	opacity: 1;
+}
+ 
+.name {
+    color:white;
+    background-color:black;
+    font-weight:bold;
+    margin-left: 0.2em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+  	padding: 20px 50px 20px 50px;
+  	
+}
+#log .nameAfter{
+		width: 0;
+    height: 0;
+  	position: relative;
+    border-top: 67px solid black;
+    border-right: 46px solid transparent;
+    top: 47px;
+}
