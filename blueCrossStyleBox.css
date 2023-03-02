@@ -3,7 +3,12 @@
 * {
     box-sizing: border-box;
 }
- 
+:root{
+    --vip-color: darkblue;
+    --mod-color: green;
+    --streamer-color: red;
+    --viewerer-color: black;
+}
 html, body {
     height: 100%;
     overflow: hidden;
@@ -17,21 +22,21 @@ body {
     font-size: {font_size};
     line-height: 1.5em;
     color: {text_color};
-	  width:100%;
+    width:100%;
 }
  
 #log>div {
-    animation: fadeInBottom 0.4s ease forwards, fadeOut 2s ease {message_hide_delay} forwards;
-    -webkit-animation: fadeInBottom 0.4s ease forwards, fadeOut 2s ease {message_hide_delay} forwards;
+    max-height: 1000px;
+    animation: fadeInBottom 1s ease forwards, fadeOut 2s ease {message_hide_delay} forwards;
+    -webkit-animation: fadeInBottom 1s ease forwards, fadeOut 2s ease {message_hide_delay} forwards;
 }
 @keyframes fadeInBottom {
    0% {
+      max-height: 0px;
       opacity: 0;
-      transform: translateY(55px);
    }
    100% {
       opacity: 1;
-      transform: translateY(0);
    }
 }
  
@@ -91,20 +96,7 @@ body {
   padding-left:15px;
   margin-top:5px;
 }
-/*
-*/
-/*
-#log .meta {
-    text-align: center;
-    padding:20px;
-    padding-right: 0.5em;
-    overflow: hidden;
-	  color:var(--color);
-	  background-color: #ce949b
-	  outline-offset: -5px;	
-  	margin-bottom:10px;
-};*/
- 
+
 #log .message {
     word-wrap: break-word;
 }
