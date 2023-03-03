@@ -8,6 +8,9 @@
     --mod-color: green;
     --streamer-color: red;
     --viewerer-color: black;
+    --padding-total:20px;
+    --padding-left-right:30px;
+    --marginBetweenMessageAndName:5px;
 }
 html, body {
     height: 100%;
@@ -94,7 +97,7 @@ body {
   border-radius:0px;
   padding:10px;
   padding-left:15px;
-  margin-top:5px;
+  margin-top:var(--marginBetweenMessageAndName);
 }
 
 #log .message {
@@ -102,7 +105,7 @@ body {
 }
  
 .badge {
-    display: inline-block;
+    display:contents;
     margin-right: 0.2em;
     position: relative;
     height: 1em;
@@ -113,21 +116,21 @@ body {
  
 .name {
     color:white;
-    background-color:black;
+    background-color:var(--viewerer-color);
     font-weight:bold;
     margin-left: 0.2em;
     white-space: nowrap;
     text-overflow: ellipsis;
     font-family: 'Roboto';
     text-transform: uppercase;
-  	padding: 20px 50px 20px 50px;
+  	padding: var(--padding-total) calc(var(--padding-total) + var(--padding-left-right));    
   	
 }
 #log .nameAfter{
-		width: 0;
+	width: 0;
     height: 0;
   	position: relative;
-    border-top: 67px solid black;
-    border-right: 46px solid transparent;
-    top: 47px;
+    border-top: calc(var(--padding-total)*3 + 7px) solid var(--viewerer-color);
+    border-right: calc(var(--padding-total)*2 + 6px) solid transparent;
+    top:  calc(var(--padding-total)*2 + 7px);
 }
