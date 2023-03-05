@@ -4,13 +4,16 @@
     box-sizing: border-box;
 }
 :root{
+    --subscriber-color: blue;
     --vip-color: darkblue;
     --mod-color: green;
-    --streamer-color: red;
-    --viewerer-color: black;
-    --padding-total:20px;
+    --broadcaster-color: red;
+    --viewer-color: black;
+    --padding-total:10px;
     --padding-left-right:30px;
     --marginBetweenMessageAndName:5px;
+    --nameFontSize:16pt;
+    --messageFontSize:10pt;
 }
 html, body {
     height: 100%;
@@ -18,12 +21,9 @@ html, body {
 }
  
 body {
-    text-shadow: 0 0 1px #000, 0 0 2px #000;
-    background: {background_color};
     font-family: 'Roboto';
-    font-weight: 700;
+    background: {background_color};
     font-size: {font_size};
-    line-height: 1.5em;
     color: {text_color};
     width:100%;
 }
@@ -50,18 +50,14 @@ body {
     left: 0;
     padding: 0 10px 10px;
     table-layout: fixed;
-  	width: 100%;
+      width: 100%;
 }
  
 #log > div {
-  	display: block;
-  	border-radius: 20px;
-  	padding: 3px;
-  	padding-left: 15px;
-  	padding-right: 15px;
-  	margin-top: 5px;
-  	width:100%;
-  	margin-top:20px;
+      display: block;
+      padding: 3px;
+      padding-right: 15px;
+      width:100%;
 }
  
 #log > div.deleted {
@@ -82,27 +78,33 @@ body {
     opacity: 0;
 }
  
-#log .message,#log .meta {
+#log .message, #log .meta {
     vertical-align: top;
     display: table-cell;
     padding-bottom: 0.1em;
+    z-index:2;
+}
+#log .meta {
+    top:20;
+    position:relative;
 }
 #log .message{
   display:block;
-  padding-left: 0.5em;
   background-color: white;
   color:black;
   border:2px solid black;
   width:100%;
   border-radius:0px;
   padding:10px;
-  padding-left:15px;
+  padding-left:25px;
   margin-top:var(--marginBetweenMessageAndName);
+  margin-left: 25px;
+  word-wrap: break-word;
+  z-index:1;
+  padding-top:25px;
+  font-size:12pt;
 }
 
-#log .message {
-    word-wrap: break-word;
-}
  
 .badge {
     display:contents;
@@ -111,26 +113,50 @@ body {
     height: 1em;
     vertical-align: middle;
     top: -0.1em;
-  	opacity: 1;
+    opacity: 1;
 }
  
 .name {
     color:white;
-    background-color:var(--viewerer-color);
+    background-color:var(--viewer-color);
     font-weight:bold;
-    margin-left: 0.2em;
     white-space: nowrap;
     text-overflow: ellipsis;
     font-family: 'Roboto';
+    font-size: var(--nameFontSize);
     text-transform: uppercase;
-  	padding: var(--padding-total) calc(var(--padding-total) + var(--padding-left-right));    
-  	
+    padding: var(--padding-total) calc(var(--padding-total) + var(--padding-left-right));
+    letter-spacing: 2px;
+}
+.name:has( .subscriber-icon) {
+    color:white;
+    background-color:var(--subscriber-color);
+    font-weight:bold;
+}
+.name:has( .premium-icon) {
+    color:white;
+    background-color:var(--vip-color);
+    font-weight:bold;
+}
+.name:has( .broadcaster-icon)  {
+    color:white;
+    background-color:var(--broadcaster-color);
+    font-weight:bold;
 }
 #log .nameAfter{
-	width: 0;
+    width: 0;
     height: 0;
-  	position: relative;
-    border-top: calc(var(--padding-total)*3 + 7px) solid var(--viewerer-color);
+    position: relative;
+    border-top: calc(var(--padding-total)*3 + 16px) solid var(--viewer-color);
     border-right: calc(var(--padding-total)*2 + 6px) solid transparent;
-    top:  calc(var(--padding-total)*2 + 7px);
+    top: calc(var(--padding-total)*2 + 17px); 
+}
+#log .nameAfter:has( .subscriber-icon){
+    border-top-color:var(--subscriber-color);
+}
+#log .nameAfter:has( .premium-icon){
+    border-top-color:var(--vip-color);
+}
+#log .nameAfter:has( .broadcaster-icon){
+    border-top-color:var(--broadcaster-color);
 }
