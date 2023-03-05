@@ -1,0 +1,66 @@
+{
+    "viewerColor": {
+        "label": "Viewer Color Picker",
+        "type": "colorpicker",
+        "value": "#202020"
+    },
+    "subColor": {
+        "label": "Subscriber Color Picker",
+        "type": "colorpicker",
+        "value": "#0000ff"
+    },
+    "vipColor": {
+        "label": "VIP Color Picker",
+        "type": "colorpicker",
+        "value": "#00008b"
+    },
+    "modColor": {
+        "label": "Moderator Color Picker",
+        "type": "colorpicker",
+        "value": "#90ee90"
+    },
+    "streamerColor": {
+        "label": "Broadcaster Color Picker",
+        "type": "colorpicker",
+        "value": "#8b0000"
+    },
+    "customField2": {
+        "label": "Slider Example",
+        "type": "slider",
+        "name": "",
+        "value": "3",
+        "max": 200,
+        "min": 100,
+        "steps": 4
+    },
+    "customField3": {
+        "label": "Textfield Example",
+        "type": "textfield",
+        "value": "Hi There"
+    },
+    "defaultFont": {
+        "label": "Font Picker Example",
+        "type": "fontpicker",
+        "value": "Roboto"
+    },
+    "customField5": {
+        "label": "Dropdown Example",
+        "type": "dropdown",
+        "options": {
+            "optionA": "Option A",
+            "optionB": "Option B",
+            "optionC": "Option C"
+        },
+        "value": "optionB"
+    },
+    "customField6": {
+        "label": "Image Input Example",
+        "type": "image-input",
+        "value": null
+    },
+    "customField7": {
+        "label": "Sound Input Example",
+        "type": "sound-input",
+        "value": null
+    }
+}
