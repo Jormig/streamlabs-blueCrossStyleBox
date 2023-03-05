@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 :root{
-    --subscriber-color: blue;
-    --vip-color: darkblue;
-    --mod-color: green;
-    --broadcaster-color: red;
-    --viewer-color: black;
+    --subscriber-color: #0000ff;
+    --vip-color: #00008b;
+    --moderator-color: #90ee90;
+    --broadcaster-color: #8b0000;
+    --viewer-color: #202020;
     --padding-total:10px;
     --padding-left-right:30px;
     --marginBetweenMessageAndName:5px;
@@ -92,7 +92,7 @@ body {
   display:block;
   background-color: white;
   color:black;
-  border:2px solid black;
+  border:2px solid var(--viewer-color);
   width:100%;
   border-radius:0px;
   padding:10px;
@@ -105,7 +105,16 @@ body {
   font-size:12pt;
 }
 
- 
+#log .message:has( .subscriber-icon){
+    border-color:var(--subscriber-color);
+}
+#log .message:has( .vip-icon){
+    border-color:var(--vip-color);
+}
+#log .message:has( .broadcaster-icon){
+    border-color:var(--broadcaster-color);
+}
+
 .badge {
     display:contents;
     margin-right: 0.2em;
@@ -125,7 +134,10 @@ body {
     font-family: 'Roboto';
     font-size: var(--nameFontSize);
     text-transform: uppercase;
-    padding: var(--padding-total) calc(var(--padding-total) + var(--padding-left-right));
+    padding-top: var(--padding-total);
+    padding-bottom: var(--padding-total);
+    padding-left: calc(var(--padding-total) + var(--padding-left-right));
+    padding-right: calc((var(--padding-total) + var(--padding-left-right))/2);
     letter-spacing: 2px;
 }
 .name:has( .subscriber-icon) {
@@ -133,7 +145,7 @@ body {
     background-color:var(--subscriber-color);
     font-weight:bold;
 }
-.name:has( .premium-icon) {
+.name:has( .vip-icon) {
     color:white;
     background-color:var(--vip-color);
     font-weight:bold;
@@ -141,6 +153,11 @@ body {
 .name:has( .broadcaster-icon)  {
     color:white;
     background-color:var(--broadcaster-color);
+    font-weight:bold;
+}
+.name:has( .type-icon)  {
+    color:white;
+    background-color:var(--moderator-color);
     font-weight:bold;
 }
 #log .nameAfter{
@@ -154,9 +171,12 @@ body {
 #log .nameAfter:has( .subscriber-icon){
     border-top-color:var(--subscriber-color);
 }
-#log .nameAfter:has( .premium-icon){
+#log .nameAfter:has( .vip-icon){
     border-top-color:var(--vip-color);
 }
 #log .nameAfter:has( .broadcaster-icon){
     border-top-color:var(--broadcaster-color);
+}
+#log .nameAfter:has( .type-icon)  {
+    border-top-color:var(--moderator-color);
 }
