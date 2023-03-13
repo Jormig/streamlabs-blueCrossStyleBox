@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family={defaultFont}:700);
- 
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
 * {
     box-sizing: border-box;
 }
@@ -9,11 +8,11 @@
     --moderator-color: {modColor};
     --broadcaster-color:  {streamerColor};
     --viewer-color: {viewerColor};
-    --padding-total:10px;
-    --padding-left-right:30px;
+    --padding-total:0.47225em;
+    --padding-left-right:1.43175em;
     --marginBetweenMessageAndName:5px;
-    --nameFontSize:16pt;
-    --messageFontSize:10pt;
+    --nameFontSize:{usernameFontSize}pt;
+    --messageFontSize:{messageFontSize}pt;
 }
 html, body {
     height: 100%;
@@ -21,9 +20,8 @@ html, body {
 }
  
 body {
-    font-family: {defaultFont};
+    font-family:  'Roboto';
     background: {background_color};
-    font-size: {font_size};
     color: {text_color};
     width:100%;
 }
@@ -102,7 +100,7 @@ body {
   word-wrap: break-word;
   z-index:1;
   padding-top:25px;
-  font-size:12pt;
+  font-size: var(--messageFontSize);
 }
 
 #log > .subscriber .message{
@@ -134,45 +132,40 @@ body {
     font-weight:bold;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-family: 'Roboto';
     font-size: var(--nameFontSize);
     text-transform: uppercase;
     padding-top: var(--padding-total);
     padding-bottom: var(--padding-total);
     padding-left: calc(var(--padding-total) + var(--padding-left-right));
     padding-right: calc((var(--padding-total) + var(--padding-left-right))/2);
-    letter-spacing: 2px;
+    letter-spacing: 0.10em;
 }
 #log > .subscriber .name {
     color:white;
     background-color:var(--subscriber-color);
-    font-weight:bold;
 }
 #log > .vip .name {
     color:white;
     background-color:var(--vip-color);
-    font-weight:bold;
 }
 
 #log > .moderator .name  {
     color:white;
     background-color:var(--moderator-color);
-    font-weight:bold;
 }
 
 #log > .broadcaster .name  {
     color:white;
     background-color:var(--broadcaster-color);
-    font-weight:bold;
 }
 
 #log .nameAfter{
     width: 0;
     height: 0;
     position: relative;
-    border-top: calc(var(--padding-total)*3 + 16px) solid var(--viewer-color);
-    border-right: calc(var(--padding-total)*2 + 6px) solid transparent;
-    top: calc(var(--padding-total)*2 + 17px); 
+    border-top: calc(var(--padding-total)*6) solid var(--viewer-color);
+    border-right: calc(var(--padding-total)*3) solid transparent;
+    top: calc(var(--padding-total)*4); 
 }
 
 #log > .subscriber .nameAfter{
