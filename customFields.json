@@ -37,15 +37,28 @@
         "label": "Message  font size (pt)",
         "type": "slider",
         "name": "",
-        "value": 10,
+        "value": 12,
         "max": 20,
         "min": 8,
         "steps": 1
     },
     "defaultFont": {
-        "label": "Font Picker Example",
+        "label": "Font Family",
         "type": "fontpicker",
         "value": "Roboto"
+    },
+    "fontWeight": {
+        "label": "Font Weight",
+        "type": "dropdown",
+        "value": "700",
+        "options": {
+            "100": "Thin (100)",
+            "300": "Light (300)",
+            "400": "Regular (400)",
+            "500": "Medium (500)",
+            "700": "Bold (700)",
+            "900": "Black (900)"
+        }
     },
     "customField5": {
         "label": "Dropdown Example",
