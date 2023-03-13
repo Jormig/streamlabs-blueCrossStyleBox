@@ -24,19 +24,23 @@
         "type": "colorpicker",
         "value": "#8b0000"
     },
-    "customField2": {
-        "label": "Slider Example",
+    "usernameFontSize": {
+        "label": "Username font size (pt)",
         "type": "slider",
         "name": "",
-        "value": "3",
-        "max": 200,
-        "min": 100,
-        "steps": 4
+        "value": 16,
+        "max": 20,
+        "min": 8,
+        "steps": 1
     },
-    "customField3": {
-        "label": "Textfield Example",
-        "type": "textfield",
-        "value": "Hi There"
+    "messageFontSize": {
+        "label": "Message  font size (pt)",
+        "type": "slider",
+        "name": "",
+        "value": 10,
+        "max": 20,
+        "min": 8,
+        "steps": 1
     },
     "defaultFont": {
         "label": "Font Picker Example",
